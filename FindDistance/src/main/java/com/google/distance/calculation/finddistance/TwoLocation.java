@@ -30,10 +30,6 @@ public class TwoLocation implements Runnable{
     String sensor, mode;
     String finalFirst, finalSecond;
 
-//    "https://maps.googleapis.com/maps/api/distancematrix/json"
-//    "false"
-//    "driving"
-//    "AIzaSyAnhTf79xLDcS0zj_cl_rjAVbx-cIBfwa8"
     public TwoLocation(Context context, String firstGeo, String secondGeo, String firstAdd, String secondAdd, String sencor, String mode
             , getDistance getDistance) {
         this.context = context;
