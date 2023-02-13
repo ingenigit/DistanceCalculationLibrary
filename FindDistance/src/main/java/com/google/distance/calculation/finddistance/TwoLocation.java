@@ -30,7 +30,7 @@ public class TwoLocation implements Runnable{
     String sensor, mode;
     String finalFirst, finalSecond;
 
-    public TwoLocation(Context context, String firstGeo, String secondGeo, String firstAdd, String secondAdd, String sencor, String mode
+    public TwoLocation(Context context, String firstGeo, String secondGeo, String firstAdd, String secondAdd, String sencor, String apikey, String uri, String mode
             , getDistance getDistance) {
         this.context = context;
         this.firstGeo = firstGeo;
@@ -39,6 +39,8 @@ public class TwoLocation implements Runnable{
         this.secondAdd = secondAdd;
         this.sensor = sencor;
         this.mode = mode;
+        this.APIKEY = apikey;
+        this.URI = uri;
         this.getDistance = getDistance;
     }
 
