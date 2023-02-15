@@ -47,10 +47,10 @@ public class TwoLocation implements Runnable{
     @Override
     public void run() {
         if (firstGeo.isEmpty()){
-            LatLng latLng = getAddressLL(firstAdd);
+            LatLng latLng = getAddLL.GetAddressLL(context, firstAdd);
             finalFirst = ((latLng != null ? latLng.latitude + ","+ latLng.longitude : "0"));
         }else if (secondGeo.isEmpty()){
-            LatLng latLng = getAddressLL(secondAdd);
+            LatLng latLng = getAddLL.GetAddressLL(context,secondAdd);
             finalSecond = ((latLng != null ? latLng.latitude + ","+ latLng.longitude : "0"));
         }else if (firstAdd.isEmpty()){
             finalFirst = firstGeo;
@@ -87,7 +87,7 @@ public class TwoLocation implements Runnable{
                                 .getJSONObject("duration");
                         String tDistance = jsonObjectDistance.getString("text").toString();
                         String tTime = jsonObjectTime.getString("text").toString();
-                        getDistance.GetTotalDistance(tDistance, tTime);
+                        getDistance.GetTotalDistance(tDistance, 0.00, 0.00, tTime, "");
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -100,26 +100,5 @@ public class TwoLocation implements Runnable{
             }
         });
         requestQueue.add(jsonObjectRequest);
-
-    }
-
-    private LatLng getAddressLL(String fulladdress) {
-        Geocoder coder = new Geocoder(context);
-        List<Address> address;
-        LatLng p1 = null;
-        try{
-            address = coder.getFromLocationName(fulladdress,5);
-            if (address == null){
-                return null;
-            }
-            Address location = address.get(0);
-            location.getLatitude();
-            location.getLongitude();
-            p1 = new LatLng((double)(location.getLatitude()), (double)(location.getLongitude()));
-            return p1;
-        }catch(IOException e){
-            e.printStackTrace();
-        }
-        return null;
     }
 }
