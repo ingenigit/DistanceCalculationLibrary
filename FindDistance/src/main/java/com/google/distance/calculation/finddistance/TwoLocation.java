@@ -49,12 +49,15 @@ public class TwoLocation implements Runnable{
         if (firstGeo.isEmpty()){
             LatLng latLng = getAddLL.GetAddressLL(context, firstAdd);
             finalFirst = ((latLng != null ? latLng.latitude + ","+ latLng.longitude : "0"));
-        }else if (secondGeo.isEmpty()){
+        }
+        if (secondGeo.isEmpty()){
             LatLng latLng = getAddLL.GetAddressLL(context,secondAdd);
             finalSecond = ((latLng != null ? latLng.latitude + ","+ latLng.longitude : "0"));
-        }else if (firstAdd.isEmpty()){
+        }
+        if (firstAdd.isEmpty()){
             finalFirst = firstGeo;
-        }else if (secondAdd.isEmpty()){
+        }
+        if (secondAdd.isEmpty()){
             finalSecond = secondGeo;
         }
         System.out.println(finalFirst + "sdsdsdsds" + finalSecond);

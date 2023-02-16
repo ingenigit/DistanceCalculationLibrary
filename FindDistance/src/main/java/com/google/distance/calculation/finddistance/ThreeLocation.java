@@ -49,17 +49,22 @@ public class ThreeLocation implements Runnable{
         if (firstGeo.isEmpty()){
             LatLng latLng = getAddLL.GetAddressLL(mContext, firstAdd);
             finalFirst = ((latLng != null ? latLng.latitude + ","+ latLng.longitude : "0"));
-        }else if (secondGeo.isEmpty()){
+        }
+        if (secondGeo.isEmpty()){
             LatLng latLng = getAddLL.GetAddressLL(mContext,secondAdd);
             finalSecond = ((latLng != null ? latLng.latitude + ","+ latLng.longitude : "0"));
-        }else if (thirdGeo.isEmpty()) {
+        }
+        if (thirdGeo.isEmpty()) {
             LatLng latLng = getAddLL.GetAddressLL(mContext, thirdAdd);
             finalThird = ((latLng != null ? latLng.latitude + "," + latLng.longitude : "0"));
-        }else if (firstAdd.isEmpty()){
+        }
+        if (firstAdd.isEmpty()){
             finalFirst = firstGeo;
-        }else if (secondAdd.isEmpty()){
+        }
+        if (secondAdd.isEmpty()){
             finalSecond = secondGeo;
-        }else if (thirdAdd.isEmpty()){
+        }
+        if (thirdAdd.isEmpty()){
             finalThird = secondGeo;
         }
         System.out.println(finalFirst + " sdsdsds " + finalSecond + " sdsdsdsds " + finalThird);
