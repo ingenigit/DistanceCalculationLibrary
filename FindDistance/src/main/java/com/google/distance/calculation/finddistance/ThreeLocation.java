@@ -32,7 +32,7 @@ public class ThreeLocation implements Runnable{
                          String uri, String sencor, String mode, String apikey, getDistance getDistance) {
         this.mContext = context;
         this.firstGeo = firstGeo;
-        this.secondGeo = secondGeo;
+        this.secondGeo =    secondGeo;
         this.thirdGeo = thirdGeo;
         this.firstAdd = firstAdd;
         this.secondAdd = secondAdd;
@@ -62,7 +62,7 @@ public class ThreeLocation implements Runnable{
         }else if (thirdAdd.isEmpty()){
             finalThird = secondGeo;
         }
-
+        System.out.println(finalFirst + " sdsdsds " + finalSecond + " sdsdsdsds " + finalThird);
         String url = Uri.parse(URI)
                 .buildUpon()
                 .appendQueryParameter("origins", finalFirst+"|"+finalSecond)

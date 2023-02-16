@@ -57,7 +57,7 @@ public class TwoLocation implements Runnable{
         }else if (secondAdd.isEmpty()){
             finalSecond = secondGeo;
         }
-
+        System.out.println(finalFirst + "sdsdsdsds" + finalSecond);
         RequestQueue requestQueue = Volley.newRequestQueue(context);
         String url = Uri.parse(URI)
                 .buildUpon()
@@ -87,6 +87,7 @@ public class TwoLocation implements Runnable{
                                 .getJSONObject("duration");
                         String tDistance = jsonObjectDistance.getString("text").toString();
                         String tTime = jsonObjectTime.getString("text").toString();
+                        System.out.println(tDistance + "sdsdsdsds" + tTime);
                         getDistance.GetTotalDistance(tDistance, 0.00, 0.00, tTime, "");
                     }
                 } catch (JSONException e) {
