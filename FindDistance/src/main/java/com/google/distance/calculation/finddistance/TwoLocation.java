@@ -91,7 +91,7 @@ public class TwoLocation implements Runnable{
                         String tDistance = jsonObjectDistance.getString("text").toString();
                         String tTime = jsonObjectTime.getString("text").toString();
                         System.out.println(tDistance + "sdsdsdsds" + tTime);
-                        getDistance.GetTotalDistance(tDistance, 0.00, 0.00, tTime, "");
+                        getDistance.GetTotalDistance(tDistance, "0 km", "0 km", tTime, "");
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();

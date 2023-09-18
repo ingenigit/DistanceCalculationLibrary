@@ -129,7 +129,7 @@ public class ThreeLocation implements Runnable{
                             float j = Float.parseFloat(splited2[0])/1000;
                             sp2 = String.valueOf(j);
                         }
-                        System.out.println(sp1 + sp2 + "KKML" + splited1[0] + splited1[1] +"fghjkl"+ splited2[0] + splited2[1]);
+                        System.out.println(sp1 + sp2 + " KKML" + splited1[0] +" "+ splited1[1] +" fghjkl "+ splited2[0] +" "+ splited2[1]);
                         String distanceValue = (String.valueOf(Double.parseDouble(sp1)+Double.parseDouble(sp2)));
                         //setValue
                         DateTimeFormatter dtf = null;
@@ -140,11 +140,13 @@ public class ThreeLocation implements Runnable{
                         }
 
                         System.out.println("Threas" + distanceValue);
-                        getDistance.GetTotalDistance(distanceValue,Double.parseDouble(sp1),Double.parseDouble(sp2), firstTime, secondTime);
+//                        getDistance.GetTotalDistance(distanceValue,Double.parseDouble(sp1),Double.parseDouble(sp2), firstTime, secondTime);
+                        getDistance.GetTotalDistance(distanceValue,(splited1[0] +" "+ splited1[1]),(splited2[0] +" "+ splited2[1]), firstTime, secondTime);
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
-                    getDistance.GetTotalDistance("0.00",0.00,0.00, "","");
+//                    getDistance.GetTotalDistance("0.00",0.00,0.00, "","");
+                    getDistance.GetTotalDistance("0.00","0 km","0 km", "","");
                     Toast.makeText(mContext, "Distance cannot be calculate", Toast.LENGTH_SHORT).show();
                 }
             }
