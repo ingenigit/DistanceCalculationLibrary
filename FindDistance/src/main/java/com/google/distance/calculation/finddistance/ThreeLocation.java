@@ -65,9 +65,9 @@ public class ThreeLocation implements Runnable{
             finalSecond = secondGeo;
         }
         if (thirdAdd.isEmpty()){
-            finalThird = secondGeo;
+            finalThird = thirdGeo;
         }
-        System.out.println(finalFirst + " sdsdsds " + finalSecond + " sdsdsdsds " + finalThird);
+        System.out.println(finalFirst + " sec  geo " + finalSecond + " trd geo " + finalThird);
         String url = Uri.parse(URI)
                 .buildUpon()
                 .appendQueryParameter("origins", finalFirst+"|"+finalSecond)
@@ -112,7 +112,7 @@ public class ThreeLocation implements Runnable{
                         String secondTime = jsonObjectTime1.getString("text").toString();
                         String[] splited1 = firstDistance.split(" ", 2);
                         String[] splited2 = secondDistance.split(" " , 2);
-                        System.out.println(splited2[0].length());
+                        System.out.println(splited1[0] + " // " + splited2[0]);
                         String sp1 = "", sp2 = "";
                         sp1 = splited1[0];
                         sp2 = splited2[0];
@@ -129,7 +129,7 @@ public class ThreeLocation implements Runnable{
                             float j = Float.parseFloat(splited2[0])/1000;
                             sp2 = String.valueOf(j);
                         }
-                        System.out.println(sp1 + sp2 + " KKML" + splited1[0] +" "+ splited1[1] +" fghjkl "+ splited2[0] +" "+ splited2[1]);
+                        System.out.println(sp1 + sp2 + " first dis " + splited1[0] +" "+ splited1[1] +" sec dis "+ splited2[0] +" "+ splited2[1]);
                         String distanceValue = (String.valueOf(Double.parseDouble(sp1)+Double.parseDouble(sp2)));
                         //setValue
                         DateTimeFormatter dtf = null;
@@ -139,7 +139,7 @@ public class ThreeLocation implements Runnable{
                             System.out.println(dtf.format(now));
                         }
 
-                        System.out.println("Threas" + distanceValue);
+                        System.out.println("totaldistance" + distanceValue);
 //                        getDistance.GetTotalDistance(distanceValue,Double.parseDouble(sp1),Double.parseDouble(sp2), firstTime, secondTime);
                         getDistance.GetTotalDistance(distanceValue,(splited1[0] +" "+ splited1[1]),(splited2[0] +" "+ splited2[1]), firstTime, secondTime);
                     }
